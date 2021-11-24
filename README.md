@@ -138,7 +138,7 @@ loss function | mae/mse         |mse/mae         |mse/mae 			|
 
 ## Inference Process
 
-### Due to the limitation of the data size, the pre-trained model will be stored [here](https://drive.google.com/drive/folders/1fpMpI5DnDpU-eU5kB9H51hSrm326zR5G?usp=sharing), you need to download it and unzip it to the checkpoint folder of the original ID-Net demo. And Data used to test the model including various organelles can be downloaded [here](https://drive.google.com/drive/folders/1Ds2dBVO138aw0Chd40k17vOTVljV8ZOS?usp=sharing)
+### Due to the limitation of the data size, the pre-trained model will be stored [here](https://drive.google.com/drive/folders/1fpMpI5DnDpU-eU5kB9H51hSrm326zR5G?usp=sharing), you need to download it and unzip it to the checkpoint folder of the original ID-Net demo. And Data used to test the model including various organelles can be downloaded [here](https://drive.google.com/drive/folders/1Ds2dBVO138aw0Chd40k17vOTVljV8ZOS?usp=sharing).Please note that if you want to restore the confocal or light slice microscope data collected by yourself, please match according to the pixel size of the corresponding cell structure listed in our excel table. 
 
 ### 1. Open the terminal in the ID-Net Demo directory and run the code ’eval.py’; the GUI interface of ‘Validation’ will appear.
 
