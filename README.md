@@ -88,7 +88,7 @@ The installation takes about 5 minutes in the tested platform. The time could be
 NOTE: When generating the data for iso-net, which processes a 3D image stack slice by slice, the depth of patch size should be set as 1. In this case, the ‘3D data parameters’ panel will be deactivated by the program. As shown in Fig. 1, only the parameters in the global and iso parameters panels are available (red boxes, Fig. 1). Otherwise, when generating the data for denoising or sr net, which treat a 3D image stack as a whole volume, the depth of patch size should be set greater than 1. In this case, the ‘ISO parameters’ panel will be deactivated (Fig. 2). The datasets for sr or denoising network will be generated.
 
 <div align=center>
-<img width="960" height="720" src="/sample/fig/fig2_3.png"/>
+<img width="960" height="360" src="/sample/fig/fig2_3.png"/>
 </div>
 
 ### 4. Click the ‘Start running’ button. A window showing several data blocks will pop up. The first row is the hr data, and the second row is generated low-resolution or anisotropic data, which can be used to judge whether or not the simulated data is correct.
@@ -100,7 +100,7 @@ NOTE: When generating the data for iso-net, which processes a 3D image stack sli
 NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data be generated, then the parameter setting of ‘3D data parameters’ will be ignored by the system. As is shown in figure 1 below, only the parameters in the box will be used; when the depth value of patch_size is greater than 1, the data of sr/denoise network will be generated, then the parameter setting of ‘ISO parameters’ will be ignored by the system. As is shown in figure 2 below, only the parameters in the box will be used. 
 
 <div align=center>
-<img width="960" height="720" src="/sample/fig/fig5_6.png"/>
+<img width="960" height="360" src="/sample/fig/fig5_6.png"/>
 </div>
 
 *** 
