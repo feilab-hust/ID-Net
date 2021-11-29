@@ -35,9 +35,7 @@ ID-Net-Demo
     ├── generate_data.py
     ├── requirements.txt
     ├── train.py
-    ├── example_data
-        └── Actin
-        └── ER
+
 ```
 
 4. Open the terminal in the ID-Net directory, install the dependencies using pip:
