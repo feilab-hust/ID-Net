@@ -136,7 +136,7 @@ def tkinter_input():
 
     tk.Label(win, text="Label tag :").grid(column=0, row=7, sticky=tk.W)
     label_tag0 = tk.StringVar()
-    label_tag0.set('confocal')
+    label_tag0.set('lightsheet')
     label_tag_entered0 = ttk.Entry(win, width=12, textvariable=label_tag0)
     label_tag_entered0.grid(column=1, row=7, columnspan=lm, sticky=tk.W)
     label_tag_entered0.focus()
