@@ -17,9 +17,6 @@ The inference process has been tested with:
  * Nvidia GeForce RTX 2080 Ti
 
 
-The inference of the example data `example_data/brain/LR/cerebellum.tif` took 12s and 350s with and without GPU promotion in the tested platform.
-
-
 ## Install
 
 1. Install python 3.6 
