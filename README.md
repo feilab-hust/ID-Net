@@ -108,7 +108,7 @@ NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data
 
 ## Inference Process
 
-### Due to the limitation of data size, the pre-trained models are stored [here](https://drive.google.com/drive/folders/1fpMpI5DnDpU-eU5kB9H51hSrm326zR5G?usp=sharing), You will need to download it and unzip it to the checkpoint folder of the original ID-Net demo. The example data of various organelles used to test the model can be downloaded [here](https://drive.google.com/drive/folders/1Ds2dBVO138aw0Chd40k17vOTVljV8ZOS?usp=sharing).Please note that if you want to restore the confocal or light slice microscope data collected by yourself, please resample your raw data according to the [pixel size]("/sample/fig/pixesize.xlsx") of the corresponding subcellular structures. 
+### Due to the limitation of data size, the pre-trained models are stored [here](https://drive.google.com/file/d/1gyQIg25Jn1duvEGEXZRmQ0oogb2f4Mfh/view?usp=sharing), You will need to download it and unzip it to the checkpoint folder of the original ID-Net demo. The example data of various organelles used to test the model can be downloaded [here](https://drive.google.com/drive/folders/1Ds2dBVO138aw0Chd40k17vOTVljV8ZOS?usp=sharing).Please note that if you want to restore the confocal or light slice microscope data collected by yourself, please resample your raw data according to the [pixel size](/sample/fig/pixesize.xlsx) of the corresponding subcellular structures. 
 
 ### 1. Open the terminal in the ID-Net Demo directory and run the code ’eval.py’, the following ‘Validation’ panel will pop up.
 
