@@ -102,7 +102,7 @@ NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data
 
 ## Training Process
 
-### 1. We can start training models after the training pairs have been properly generated. To run the training procedure, open the terminal in the ID-Net Demo directory and run “python train.py ”; the panel of ‘Training GUI’ will appear..
+### 1. We can start training models after the training pairs have been properly generated. To run the training procedure, open the terminal in the ID-Net Demo directory and run “python train.py ”, the following ‘Training GUI’ panel will pop up.
 
 <div align=center>
 <img width="480" height="360" src="/sample/fig/fig7.png"/>
@@ -110,17 +110,15 @@ NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data
 
 ### 2. Set the parameters. 
 
- * Choose data type: Select the organelle structure type of your data.
- * Choose net type: Select the purpose of your net from SR, Denoise and ISO.
- * Choose factor: Select the factor that matches the training data.
- * Choose first net: Select the type of the first net. If your are going to train a denoise or iso network, select ‘None’.
- * Choose second net: Select the type of the second net.
- * Choose loss function: Select the appropriate loss function for the training net from ‘mae’ and ‘mse’.
- * LPIPS loss: Choose whether to add LPIPS loss function during the training. 
+ * Choose data type: Select which type of organelle your data belong to.
+ * Choose net type: Select the specific type of augment to be trained: superresolution, denoising or iso enhancement.
+ * Choose factor: Select the enhancement factor, which should match the setting made at the data generation step.
+ * Choose loss function: Select appropriate loss function, ‘mae’ or ‘mse’, for the model training.
+ * LPIPS loss: Choose whether LPIPS perceptual loss is required during the training. 
  * Label tag: Add specific tag to the currently trained network.
  * Patch size: Set its values according to the 'patch size' of ‘Global parameters' in ‘Crop data’ panel.
- 
-### 3. Click the ‘Start running’ button. 
+ * 
+### 3. Click the ‘Start running’ button to start the training procedure.
 
 net type      | Denoise         |SR    			 | ISO 				|
 :-----:       |:-----:          |:-----:		 |:---------:		|
@@ -135,21 +133,21 @@ loss function | mae/mse         |mse/mae         |mse/mae 			|
 
 ### Due to the limitation of the data size, the pre-trained model will be stored [here](https://drive.google.com/drive/folders/1fpMpI5DnDpU-eU5kB9H51hSrm326zR5G?usp=sharing), you need to download it and unzip it to the checkpoint folder of the original ID-Net demo. And Data used to test the model including various organelles can be downloaded [here](https://drive.google.com/drive/folders/1Ds2dBVO138aw0Chd40k17vOTVljV8ZOS?usp=sharing).Please note that if you want to restore the confocal or light slice microscope data collected by yourself, please match according to the pixel size of the corresponding cell structure listed in our excel table. 
 
-### 1. Open the terminal in the ID-Net Demo directory and run the code ’eval.py’; the GUI interface of ‘Validation’ will appear.
+### 1. Open the terminal in the ID-Net Demo directory and run the code ’eval.py’, the following ‘Validation’ panel will pop up.
 
-### 2. Set parameter ‘data type’: Select the organelle structure type of the data to be reconstructed.
+### 2. Set parameter ‘data type’: Select the type of organelle to be reconstructed.
 
-### 3. Check the type of network you want to apply at the bottom of GUI. For example, if ‘Denoise’ and ‘SR’ are checked synchronously, the denoised and denoised super-resolution image will be output.
+### 3. The ID is a multi-stage progressive restoration model containing three sub models as denoising, superresolution, and isotropic restoration. If you trained all three models, you can fun full ID restoration with checking all the three boxes at the bottom of the panel. Otherwise, you can check the specific type (s) of restoration model (s) you have trained to enhance the raw data. For example, if you only trained the denoising and supe-resolution models, then check ‘Denoise’ and ‘SR’ boxes to allow the trained models to infer denoised-and-super-resolved images.
 
 <div align=center>
 <img width="480" height="360" src="/sample/fig/fig8.png"/>
 </div>
 
-### 4. According to the parameter settings in Training Process, set the corresponding parameters of networks selected in step 3, namely ‘net type’, ‘factor’, ‘first net’, ‘second net’, ‘loss function’ and ‘label tag’. And our default network label tag is “lightsheet” and “confocal”. Note that "confocal" label is only used to convert "confocal" data to “lightsheet” data..
+### 4. You can set thresholds for the selected models separately. This will allow you to slightly tune the visual effect of the model outputs. It’s noted that the default network label tags are “lightsheet” and “confocal” in our program, and "confocal" label is only used to convert "confocal" data to “lightsheet” data
 
- * Normalize_threshold: The threshold of data normalization. Default value is 99.99.
- * ISO z sub factor: The threshold of validation data normalization. Default value is 99.99.
- * Validation_data_path：Click the button ’Choose’, select validation data in your computer
+ * Normalize_threshold: The normalization threshold of the validation data. The default value of 99.99 is recommended.
+ * ISO z sub factor: The magnification of the axial interpolation set for matching the pixel size in isotropic outputs.
+ * Validation_data_path：Click the ’Choose’ button to select the validation data that have been downloaded in your computer.
 
 ### 5. Click ‘Strat running’ button to start the inference. The model outputs will be saved at newly created subfolder of the “Validation_data_path”.
 
