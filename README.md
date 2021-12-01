@@ -117,7 +117,7 @@ NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data
  * LPIPS loss: Choose whether LPIPS perceptual loss is required during the training. 
  * Label tag: Add specific tag to the currently trained network.
  * Patch size: Set its values according to the 'patch size' of ‘Global parameters' in ‘Crop data’ panel.
- * 
+
 ### 3. Click the ‘Start running’ button to start the training procedure.
 
 *** 
