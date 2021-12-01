@@ -154,7 +154,7 @@ loss function | mae/mse         |mse/mae         |mse/mae 			|
 ### 5. Click ‘Strat running’ button to start the inference. The model outputs will be saved at newly created subfolder of the “Validation_data_path”.
 
 ## Acknowledgements:
-This program was built based on based on deep learning via TensorFlow and TensorLayer. We also acknowledge the selfless share from Martin Weigert’ groups. You are welcome to use the code or program freely for research purpose. If you publish your work with the help of this program, please cite it at “Multi-color 4D superresolution light-sheet microscopy reveals organelle interactions at isotropic 100-nm resolution and sub-second timescales，Y Zhao, M Zhang, W Zhang, Q Liu, P Wang, R Chen, P Fei, YH Zhang, bioRxiv, 2021”. Please feel free to contact us at (feipeng@hust.edu.cn) if you have further question. 
+This program was built based on based on deep learning via TensorFlow and TensorLayer. We also acknowledge the selfless share from Martin Weigert’ groups[1]. You are welcome to use the code or program freely for research purpose. If you publish your work with the help of this program, please cite it at “Multi-color 4D superresolution light-sheet microscopy reveals organelle interactions at isotropic 100-nm resolution and sub-second timescales，Y Zhao, M Zhang, W Zhang, Q Liu, P Wang, R Chen, P Fei, YH Zhang, bioRxiv, 2021”. Please feel free to contact us at (feipeng@hust.edu.cn) if you have further question. 
 
 ## References:
 [1]Weigert, M., Schmidt, U., Boothe, T. et al. Content-aware image restoration: pushing the limits of fluorescence microscopy. Nat Methods 15, 1090–1097 (2018).
