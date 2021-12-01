@@ -112,7 +112,7 @@ def tkinter_input():
     ttk.Label(win, text="Choose factor:").grid(column=0, row=row_2+1, sticky=tk.W)
     factor = tk.StringVar()
     factor_Chosen = ttk.Combobox(win, width=5, textvariable=factor, state='readonly')
-    factor_Chosen['values'] = (1, 2)
+    factor_Chosen['values'] = (1, 2, 4)
     factor_Chosen.grid(column=1, row=row_2+1, columnspan=2, sticky=tk.W)
     factor_Chosen.current(1)
 
