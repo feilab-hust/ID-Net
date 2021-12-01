@@ -22,22 +22,6 @@ The inference process has been tested with:
 1. Install python 3.6 
 2. (Optional) If your computer has a CUDA-enabled GPU, install the CUDA and CUDNN of the proper version.
 3. Download the ID-Net_Demo.zip and unpack it. The directory tree should be: 
-
-```  
-ID-Net-Demo 
-    . 
-    .  
-    ├── configs
-    ├── checkpoint
-    ├── crop_data.py
-    ├── dataread.py
-    ├── eval_all.py
-    ├── generate_data.py
-    ├── requirements.txt
-    ├── train.py
-
-```
-
 4. Open the terminal in the ID-Net directory, install the dependencies using pip:
 
 ```
