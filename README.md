@@ -120,13 +120,6 @@ NOTE: Only when patch_size’s depth value is equal to 1 will the isotropic data
  * 
 ### 3. Click the ‘Start running’ button to start the training procedure.
 
-net type      | Denoise         |SR    			 | ISO 				|
-:-----:       |:-----:          |:-----:		 |:---------:		|
-factor        | 1               | >1             | 1				| 
-first net     | None            |dbpn3d/convnet3d| None 			|
-second net    | drunet3d/unet3d |rdn3d           |drunet2d/unet2d   |
-loss function | mae/mse         |mse/mae         |mse/mae 			|
-
 *** 
 
 ## Inference Process
