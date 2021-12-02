@@ -497,8 +497,10 @@ class Trainer(BaseTrainer):
         ln_loss = loss_fn(self.plchdr_hr, net.outputs)
         ln_loss_test = loss_fn(self.plchdr_hr, net_test.outputs)
         if using_lpips_loss:
-            loss_lpips = lpips_loss(net.outputs, self.plchdr_hr)
+            loss_lpips = lpips_loss(self.plchdr_hr, self.plchdr_hr)
+            loss_lpips_test = lpips_loss(self.plchdr_hr, net_test.outputs)
             ln_loss += 0.01*loss_lpips
+            ln_loss_test += 0.01 * loss_lpips_test
 
         ln_optim = tf.train.AdamOptimizer(self.learning_rate_var, beta1=beta1).minimize(ln_loss, var_list=net_vars)
 
@@ -569,10 +571,13 @@ class SegmentedTrainer(BaseTrainer):
         loss_test_n2 = loss_fn(self.plchdr_hr, net_stage2_test.outputs)
 
         loss_training = loss_training_n1 + loss_training_n2
-        if using_lpips_loss:
-            loss_lpips = lpips_loss(net_stage2_test.outputs, self.plchdr_hr)
-            loss_training += 0.01*loss_lpips
         loss_test = loss_test_n2 + loss_test_n1
+        if using_lpips_loss:
+            loss_lpips = lpips_loss(self.plchdr_hr, net_stage2.outputs)
+            loss_lpips_test = lpips_loss(self.plchdr_hr, net_stage2_test.outputs)
+            loss_training += 0.01*loss_lpips
+            loss_test += 0.01*loss_lpips_test
+
 
         # n1_optim = tf.train.AdamOptimizer(self.learning_rate_var, beta1=beta1).minimize(loss_training, var_list=vars_n1)
         # n2_optim = tf.train.AdamOptimizer(self.learning_rate_var, beta1=beta1).minimize(loss_training_n2, var_list=vars_n2)
@@ -587,6 +592,9 @@ class SegmentedTrainer(BaseTrainer):
         self.loss.update({'loss_training': loss_training, 'loss_training_n2': loss_training_n2,
                           'loss_training_n1': loss_training_n1})
         self.loss_test.update({'loss_test': loss_test, 'loss_test_n2': loss_test_n2, 'loss_test_n1': loss_test_n1})
+        if using_lpips_loss:
+            self.loss.update({'loss_lpips': loss_lpips})
+            self.loss_test.update({'loss_lpips_test': loss_lpips_test})
         # self.optim.update({'n1_optim' : n1_optim, 'n2_optim' : n2_optim, 'n_optim' : n_optim})
         self.optim.update({'n_optim': n_optim})
 
